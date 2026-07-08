@@ -169,3 +169,5 @@ dict
 set
 
 A list is an ordered collection of items.
+
+A parameter is a variable that belongs to the function. Its value is supplied when the function is called.
