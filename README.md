@@ -281,3 +281,13 @@ def greet(name):
 Arguments appear in the function call.
 
 greet("Benjamin")
+
+
+The keys "name" and "amount" are repeated. In a dictionary, each key must be unique. You can't have multiple "name" keys representing different expenses in the same dictionary.
+
+So one dictionary is meant to describe one thing. In our case, that "one thing" is a single expense.
+
+
+Whenever you have different pieces of information that belong to one thing, a dictionary is often a good choice.
+
+A dictionary is simply a collection of key–value pairs.

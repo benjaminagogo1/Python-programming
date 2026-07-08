@@ -100,3 +100,10 @@ y.append(3)
 print(x)
 print(y)
 print(z)
+
+result = print("Hello")
+
+print(result)
+
+result = add(2, 3)
+print(result)
