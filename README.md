@@ -131,3 +131,41 @@ If you instead run:
 python3 hello.py
 
 Python opens the file itself and ignores the shebang, because you have already told it which interpreter to use.
+
+Everything in python is an object.
+
+"benjamin" is an  object type of string.
+21 is an object type of int
+etc.
+
+A variable is a name that refers to an object in memory.
+
+1. Immutable objects
+
+These cannot be changed after they are created.
+
+Examples:
+
+int
+float
+bool
+str
+tuple
+
+Example:
+
+name = "Benjamin"
+
+
+
+2. Mutable objects
+
+These can be changed after they are created.
+
+Examples:
+
+list
+dict
+set
+
+A list is an ordered collection of items.
