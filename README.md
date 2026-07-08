@@ -171,3 +171,113 @@ set
 A list is an ordered collection of items.
 
 A parameter is a variable that belongs to the function. Its value is supplied when the function is called.
+
+
+
+There is no type annotation required. Python will accept any object unless you explicitly add type.
+
+
+Imagine you're filling out a form
+
+The form says:
+
+Name: ____________
+Age:  ____________
+
+The labels Name and Age are like parameters.
+
+When you fill in:
+
+Name: Benjamin
+Age: 25
+
+The values Benjamin and 25 are like arguments.
+
+In Python
+
+Suppose we define a function:
+
+def greet(name):
+    print("Hello,", name)
+During the definition
+def greet(name):
+
+name is the parameter.
+
+Think of it as an empty placeholder.
+
+Parameter
+
+name = ________
+
+Now we call the function:
+
+greet("Benjamin")
+
+Here:
+
+"Benjamin"
+
+is the argument.
+
+It is the actual value being passed into the function.
+
+Python temporarily does something conceptually like this:
+
+name = "Benjamin"
+
+print("Hello,", name)
+
+When the function finishes, that local variable name disappears.
+
+Another example
+def add(a, b):
+    print(a + b)
+
+Here:
+
+a
+b
+
+are parameters.
+
+Now we call it:
+
+add(10, 20)
+
+Here:
+
+10
+20
+
+are arguments.
+
+Python conceptually does:
+
+a = 10
+b = 20
+
+print(a + b)
+
+Output:
+
+30
+
+
+
+A trick to remember
+
+I use this mental shortcut:
+
+Parameter = Placeholder
+Argument = Actual value
+
+Or even simpler:
+
+Parameters appear in the function definition.
+
+def greet(name):
+
+Arguments appear in the function call.
+
+greet("Benjamin")
