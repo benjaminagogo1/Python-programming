@@ -2,3 +2,4 @@
 
 greeting="Hello, world!"
 print(greeting)
+print(name)
