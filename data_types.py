@@ -1,3 +1,4 @@
+import math
 # string data types
 
 first = "Benjamin"
@@ -43,3 +44,56 @@ print("Bread".ljust(16, ".") + " #200")
 print("Fish".ljust(16, ".") + " #500")
 print("Oil".ljust(16, ".") + " #1000")
 print("menu".upper().center(24, "="))
+
+
+print("")
+
+# string index vlues
+
+me = "Benjamin"
+he = "Agogo"
+# print(me[-1])
+# print(me[0])
+# print(me[1:])
+
+print(me.startswith("k"))
+print(me.startswith("B"))
+
+
+# Boolean Datat Type
+MyValue = True
+x = bool(False)
+print(x)
+print(MyValue)
+print(isinstance(MyValue, bool))
+
+
+# Numeric data types
+ 
+# Integer type
+price = 100
+best_price = 600
+print(type(price))
+print(isinstance(best_price, int))
+
+# float type
+
+print("")
+
+gpa = 3.35
+pa = 5
+print(gpa)
+print(abs(gpa))
+print(abs(gpa *-1))
+print(round(gpa, 1))
+print(math.pi)
+print(float(pa))
+print(type(gpa))
+
+# complex type
+
+comp_value = 5j+3j
+print(comp_value)
+print(comp_value.real)
+print(comp_value.imag)
+print(type(comp_value))
