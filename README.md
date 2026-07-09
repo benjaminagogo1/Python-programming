@@ -300,3 +300,12 @@ print("userOption =", userOption)
 print(f"userOption = {userOption}")
 print(f'userOption = "{userOption}"')
 print("You entered", repr(userOption))
+
+
+Delete an expense.
+Show the total amount spent.
+Search for an expense by name.
+Save expenses to a file so they don't disappear when the program exits.
+
+successfully deleted.
+item added

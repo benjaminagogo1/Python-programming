@@ -9,10 +9,10 @@ while running:
 
     print()
     print("menu".upper().center(24, "="))
-    userOption = input("Choose....\n1. Add Expense\n2. Show Expense\n3. Exit\n")
+    userOption = input("Choose....\n1. Add Expense\n2. Show Expense\n3. Delete Expense\n4. Exit\n")
 
     print()
-    if userOption != "1" and userOption != "2" and userOption != "3":
+    if userOption != "1" and userOption != "2" and userOption != "3" and userOption != "4":
         print("You must choose between 1, 2 or 3")
         continue
 
@@ -20,11 +20,15 @@ while running:
     if option == 1:
         expenseName = input("Enter expense name..\n")
         amount = input("Enter expense amount..\n")
-        userAmount = int(amount)
+        try:
+            amount = int(amount)
+        except ValueError:
+            print("Invalid input: enter only digit")
+            continue
         expenseDate = input("Enter the date..\n")
         expense = {
             "name": expenseName,
-            "amount": userAmount,
+            "amount": amount,
             "date": expenseDate
         }
         expenses.append(expense)
@@ -37,13 +41,30 @@ while running:
             number += 1
             total += expense["amount"]
         print()
-        print("Total expenses =", total)
+        print(f"Total expenses: = ₦{total}")
     elif option == 3:
+        total = 0
+        number = 1
+        print("Choose the expense to delete".upper().center(40, "="))
+        for expense in expenses:
+            print(f"{number}. {expense["name"]}: ₦{expense["amount"]} |{expense["date"]}")
+            total += expense["amount"]
+            number += 1
+        print(f"Total expenses: = ₦{total}")
+        choice = input("which expense do you want to delete?\n")
+        try:
+            choice = int(choice)
+        except ValueError:
+            print("Invalid input. Please enter only digits.")
+            continue
+        index = choice -1
+        if choice < 0 or choice > len(expenses):
+            print("Choose from the the list of expenses")
+            continue
+        expenses.pop(index)
+
+    elif option == 4:
         running = False
-
-
-
-
 
 
 
