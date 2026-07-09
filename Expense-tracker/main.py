@@ -13,7 +13,7 @@ while running:
 
     print()
     if userOption != "1" and userOption != "2" and userOption != "3" and userOption != "4":
-        print("You must choose between 1, 2 or 3")
+        print("You must choose between 1, 2, 3 or 4")
         continue
 
     option = int(userOption)
@@ -43,14 +43,14 @@ while running:
         print()
         print(f"Total expenses: = ₦{total}")
     elif option == 3:
-        total = 0
+        if not expenses:
+            print("No expense to delete.")
+            continue
         number = 1
         print("Choose the expense to delete".upper().center(40, "="))
         for expense in expenses:
             print(f"{number}. {expense["name"]}: ₦{expense["amount"]} |{expense["date"]}")
-            total += expense["amount"]
             number += 1
-        print(f"Total expenses: = ₦{total}")
         choice = input("which expense do you want to delete?\n")
         try:
             choice = int(choice)
@@ -58,10 +58,11 @@ while running:
             print("Invalid input. Please enter only digits.")
             continue
         index = choice -1
-        if choice < 0 or choice > len(expenses):
+        if choice < 1 or choice > len(expenses):
             print("Choose from the the list of expenses")
             continue
-        expenses.pop(index)
+        deleted = expenses.pop(index)
+        print(f"\033[31m{deleted["name"]} deleted successfully.\033[0m")
 
     elif option == 4:
         running = False
