@@ -11,7 +11,7 @@ while running:
     print("menu".upper().center(24, "="))
     userOption = input("Choose....\n1. Add Expense\n2. Show Expense\n3. Exit\n")
 
-    print("You entered =", repr(userOption))
+    # print("You entered =", repr(userOption))
 
     print()
     if userOption != "1" and userOption != "2" and userOption != "3":
@@ -20,7 +20,7 @@ while running:
 
     option = int(userOption)
     if option == 1:
-        expenseName = input("enter expense name..\n")
+        expenseName = input("Enter expense name..\n")
         amount = input("Enter expense amount..\n")
         userAmount = int(amount)
         expenseDate = input("Enter the date..\n")
@@ -30,13 +30,16 @@ while running:
             "date": expenseDate
         }
         expenses.append(expense)
-        for expense in expenses:
-            print(expense)
+        # for expense in expenses:
+            # print(expense)
     elif option == 2:
+        number = 1
         print("expenses".upper().center(28, "="))
         for expense in expenses:
-            print(expense["name"], expense["amount"])
-
+            print(f"{number}. {expense["name"]}: ₦{expense["amount"]} {expense["date"]}")
+            number += 1
+            for total in expenses[1]:
+                print(total)
     elif option == 3:
         running = False
 
