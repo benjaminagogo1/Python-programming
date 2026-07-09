@@ -19,19 +19,23 @@ while running:
         continue
 
     option = int(userOption)
-    print()
     if option == 1:
         expenseName = input("enter expense name..\n")
         amount = input("Enter expense amount..\n")
         userAmount = int(amount)
+        expenseDate = input("Enter the date..\n")
         expense = {
             "name": expenseName,
             "amount": userAmount,
+            "date": expenseDate
         }
         expenses.append(expense)
-        print(expenses)
+        for expense in expenses:
+            print(expense)
     elif option == 2:
-        get()
+        print("expenses".upper().center(28, "="))
+        for expense in expenses:
+            print(expense["name"], expense["amount"])
 
     elif option == 3:
         running = False
