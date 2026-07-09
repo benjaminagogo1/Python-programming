@@ -291,3 +291,12 @@ So one dictionary is meant to describe one thing. In our case, that "one thing" 
 Whenever you have different pieces of information that belong to one thing, a dictionary is often a good choice.
 
 A dictionary is simply a collection of key–value pairs.
+
+
+print("You entered", repr(userOption))
+
+
+print("userOption =", userOption)
+print(f"userOption = {userOption}")
+print(f'userOption = "{userOption}"')
+print("You entered", repr(userOption))
