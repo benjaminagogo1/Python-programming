@@ -22,6 +22,7 @@ def add_expense():
         "date": expenseDate
      }
     expenses.append(expense)
+    print(f"\033[32m{expense["name"]}; item added successfully!\033[0m")
 
 
 
@@ -61,7 +62,7 @@ def delete_expense():
         print("Choose from the the list of expenses")
         return
     deleted = expenses.pop(index)
-    print(f"\033[31m{deleted["name"]} deleted successfully.\033[0m")
+    print(f"\033[31m{deleted["name"]} deleted successfully!\033[0m")
   
 
 
@@ -85,3 +86,6 @@ while running:
         delete_expense()
     elif option == 4:
         running = False
+        print("Thank you for for using my expense tracker".upper().center(60, "="))
+        print("\033[34mgoodbye! ".upper().center(60, "="))
+        print()
