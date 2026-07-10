@@ -22,13 +22,13 @@ def add_expense():
         "date": expenseDate
      }
     expenses.append(expense)
-    print(f"\033[32m{expense["name"]}; item added successfully!\033[0m")
+    print(f"\033[32m{expense["name"]} added successfully!\033[0m")
 
 
 
 def show_expense():
     if not expenses:
-        print("No expense found.")
+        print("No expense found. Add some expenses to be displayed.")
         return
     total = 0
     number = 1
@@ -39,8 +39,16 @@ def show_expense():
         total += expense["amount"]
     print()
     print(f"Total expenses: = ₦{total}")
+    print()
+    want_to_edit = int(input("Do you want edit?\n1. Yes\n2. No\n"))
+    if want_to_edit == 1:
+        edit_displayed_expenses()
+    elif want_to_edit == 2:
+        return
 
 
+def edit_displayed_expenses():
+    item_selected = input("which expense do you want to edit?\n")
 
 def delete_expense():
     if not expenses:
@@ -63,7 +71,7 @@ def delete_expense():
         return
     deleted = expenses.pop(index)
     print(f"\033[31m{deleted["name"]} deleted successfully!\033[0m")
-  
+ 
 
 
 running = True
