@@ -2,4 +2,13 @@
 
 greeting="Hello, world!"
 print(greeting)
-print(name)
+# print(name)
+
+def test():
+    print("A")
+    return
+    print("B")
+
+print("1")
+test()
+print("2")

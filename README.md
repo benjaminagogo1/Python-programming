@@ -309,3 +309,260 @@ Save expenses to a file so they don't disappear when the program exits.
 
 successfully deleted.
 item added
+
+
+
+
+Benjamin, I really like this question.
+
+This is the kind of question a software engineer asks after shipping Version 1:
+
+"How can I improve it?"
+
+Let's review it as if I were reviewing a pull request from a junior developer on my team.
+
+⭐⭐⭐⭐⭐ Program Structure (Already there)
+
+You already have:
+
+A main loop
+Clear menu
+Logical flow
+No duplicated logic that causes bugs
+The program keeps running until the user exits
+
+Nothing to change here for Version 1.
+
+Later we'll improve it with functions.
+
+⭐⭐⭐⭐☆ → ⭐⭐⭐⭐⭐ Input Validation
+
+Right now you validate:
+
+✅ Menu choice
+✅ Amount
+✅ Delete choice
+
+I'd give the last star if you also validate:
+
+Expense name
+
+Don't allow this:
+
+Expense name:
+<user presses Enter>
+
+or
+
+Expense name:
+     
+
+Instead:
+
+if expenseName.strip() == "":
+    print("Expense name cannot be empty.")
+    continue
+Date
+
+Right now I can type:
+
+banana
+
+as a date.
+
+The program accepts it.
+
+Later we'll learn proper date validation.
+
+⭐⭐⭐⭐☆ → ⭐⭐⭐⭐⭐ Code Readability
+
+Your code is already easy to read.
+
+I'd improve it by reducing duplication.
+
+Look at these two sections:
+
+number = 1
+total = 0
+
+for expense in expenses:
+    ...
+
+You wrote almost the same code twice.
+
+Professional developers don't like repeating code.
+
+Later we'll do:
+
+show_expenses()
+
+instead.
+
+I'd also improve variable names slightly.
+
+Instead of:
+
+userOption
+
+I'd probably write:
+
+menu_choice
+
+because it immediately tells me what the variable means.
+
+⭐⭐⭐⭐☆ → ⭐⭐⭐⭐⭐ User Experience
+
+This is where you can have the most fun.
+
+For example...
+
+Instead of:
+
+Food deleted successfully.
+
+you could print:
+
+✅ Food deleted successfully.
+
+When adding an expense:
+
+Expense added successfully.
+
+instead of silently returning to the menu.
+
+When exiting:
+
+Thank you for using My Expense Tracker!
+Goodbye!
+
+instead of just ending.
+
+When there are no expenses:
+
+Instead of:
+
+==========EXPENSES==========
+
+show:
+
+No expenses found.
+
+After deleting:
+
+Show the updated list automatically.
+
+That feels much smoother.
+
+⭐⭐⭐⭐⭐⭐ (Beyond five stars)
+
+These aren't required, but they're what I'd add to Version 2 or 3.
+
+Search
+Search expense:
+
+Food
+
+Found:
+
+Food
+₦6000
+6/7/26
+Edit
+Edit expense
+
+1. Food
+
+New amount:
+7000
+Save to file
+
+Today, every time you exit:
+
+Everything disappears.
+
+We'll fix that.
+
+Load from file
+
+When you start the program again:
+
+Loading expenses...
+
+Everything comes back.
+
+Pretty table
+
+Instead of:
+
+1. Food: ₦6000 |6/7/26
+
+show:
+
+-----------------------------------------
+No  Name         Amount      Date
+-----------------------------------------
+1   Food         ₦6000       6/7/26
+2   Transport    ₦4000       4/7/26
+-----------------------------------------
+Total            ₦10000
+
+That looks like a professional terminal application.
+
+The biggest improvement
+
+If I could only choose one thing to improve your project, it wouldn't be a new feature.
+
+It would be this:
+
+def add_expense():
+    ...
+
+def show_expenses():
+    ...
+
+def delete_expense():
+    ...
+
+Why?
+
+Because your while loop is becoming long.
+
+A good main loop should read almost like English:
+
+while running:
+    show_menu()
+
+    if option == 1:
+        add_expense()
+    elif option == 2:
+        show_expenses()
+    elif option == 3:
+        delete_expense()
+    elif option == 4:
+        running = False
+
+Look at that.
+
+You can almost read it without knowing Python.
+
+That's one of the goals of clean code.
+
+My recommendation
+
+I don't think you should add more features yet.
+
+I think you've earned the right to learn functions.
+
+Not because your program is broken, but because your program has become large enough that functions will solve a real problem.
+
+That's exactly how I want you to learn: introduce a concept when the project naturally demands it, not because it's next in a textbook.
+
+I think this is the perfect moment to make that transition.
+
+String
+   │
+   ├── strip()
+   ├── upper()
+   ├── lower()
+   ├── replace()
+   └── split()
