@@ -69,8 +69,20 @@ def edit_displayed_expenses():
                 new_name = input("Enter the new name\n")
                 expense_to_edit["name"] = new_name
             if selected_option == 2:
-                new_amount = input("Enter the amount\n")
+                new_amount = input("Enter the new amount\n")
+                try:
+                    new_amount = int(new_amount)
+                except ValueError:
+                    print("Error: Please enter only digit")
+                    return
                 expense_to_edit["amount"] = new_amount
+            if selected_option == 3:
+                new_date = input("Enter the new date\n")
+                try:
+                    new_date = int(new_date)
+                except ValueError:
+                    print("Error: enter the correct date format")
+                expense_to_edit["date"] = new_date
             break
     if not found:
         print("Expense not found.")
