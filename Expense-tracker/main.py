@@ -15,7 +15,7 @@ def add_expense():
     except ValueError:
         print("Invalid input: Please enter only digit")
         return
-    expenseDate = input("Enter the date..\n")
+    expenseDate = input("Enter the date {dd/mm/yy}: \n")
     expense = {
         "name": expenseName,
         "amount": amount,
@@ -32,9 +32,13 @@ def show_expense():
         return
     total = 0
     number = 1
-    print("expenses".upper().center(28, "="))
+    longest_name = 0
+    print("expenses".upper().center(50, "="))
     for expense in expenses:
-        print(f"{number}. {expense["name"]}: ₦{expense["amount"]} |{expense["date"]}")
+        if len(expense["name"]) > longest_name:
+            longest_name = len(expense["name"])
+    for expense in expenses:
+        print(f"{"\033[34mS/n\033[0m"} {number}. {expense["name"]:<{longest_name}}| ₦{expense["amount"]:<{longest_name}}| {expense["date"]:<{longest_name}}|")
         number += 1
         total += expense["amount"]
     print()
@@ -68,6 +72,8 @@ def edit_displayed_expenses():
             if selected_option == 1:
                 new_name = input("Enter the new name\n")
                 expense_to_edit["name"] = new_name
+                print(f"\033[32m{expense_to_edit["name"]} updated successfully!\033[0m")
+
             if selected_option == 2:
                 new_amount = input("Enter the new amount\n")
                 try:
@@ -76,13 +82,17 @@ def edit_displayed_expenses():
                     print("Error: Please enter only digit")
                     return
                 expense_to_edit["amount"] = new_amount
+                print(f"\033[32m{expense_to_edit["amount"]} updated successfully!\033[0m")
+
             if selected_option == 3:
                 new_date = input("Enter the new date\n")
                 try:
                     new_date = int(new_date)
                 except ValueError:
+                    return
                     print("Error: enter the correct date format")
                 expense_to_edit["date"] = new_date
+                print(f"\033[32m{expense_to_edit["date"]} updated successfully!\033[0m")
             break
     if not found:
         print("Expense not found.")
