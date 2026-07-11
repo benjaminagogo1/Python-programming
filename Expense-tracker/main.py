@@ -53,10 +53,27 @@ def show_expense():
 
 
 def edit_displayed_expenses():
+    found = False
     item_selected = input("which expense do you want to edit?\n")
     for expense_to_edit in expenses:
-        if item_selected != expense_to_edit["name"]:
-            print()
+        if item_selected == expense_to_edit["name"]:
+            found = True
+            selected_option = input("what do you want to edit?\n1. Name\n2. Amount\n3. Date\n")
+            try:
+                selected_option = int(selected_option)
+            except ValueError:
+                print("Error: Choose between the given options above")
+                return
+
+            if selected_option == 1:
+                new_name = input("Enter the new name\n")
+            expense_to_edit["name"] = new_name
+            if selected_option == 2:
+                new_amount = input("Enter the amount\n")
+            expense_to_edit["amount"] = new_amount
+            break
+    if not found:
+        print("Expense not found.")
 
 
 def delete_expense():
