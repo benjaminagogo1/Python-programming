@@ -12,3 +12,6 @@ def test():
 print("1")
 test()
 print("2")
+
+print(f"|{'Food':<15}|")
+print(f"|{'Transportation':>15}|")
