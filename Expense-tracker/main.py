@@ -40,7 +40,12 @@ def show_expense():
     print()
     print(f"Total expenses: = ₦{total}")
     print()
-    want_to_edit = int(input("Do you want edit?\n1. Yes\n2. No\n"))
+    want_to_edit = input("Do you want edit?\n1. Yes\n2. No\n")
+    try:
+        want_to_edit = int(want_to_edit)
+    except ValueError:
+        print("Error: Please, only enter only digit")
+        return
     if want_to_edit == 1:
         edit_displayed_expenses()
     elif want_to_edit == 2:
@@ -49,6 +54,10 @@ def show_expense():
 
 def edit_displayed_expenses():
     item_selected = input("which expense do you want to edit?\n")
+    for expense_to_edit in expenses:
+        if item_selected != expense_to_edit["name"]:
+            print()
+
 
 def delete_expense():
     if not expenses:

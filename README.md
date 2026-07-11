@@ -566,3 +566,23 @@ String
    ├── lower()
    ├── replace()
    └── split()
+
+
+
+
+
+   found = False
+
+Why?
+
+Because before you search, you haven't found anything yet.
+
+Then during the loop:
+
+If you find a matching expense, change it to:
+found = True
+
+After the loop, ask:
+
+if not found:
+    print("Expense not found.")
