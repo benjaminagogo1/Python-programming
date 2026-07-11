@@ -67,10 +67,10 @@ def edit_displayed_expenses():
 
             if selected_option == 1:
                 new_name = input("Enter the new name\n")
-            expense_to_edit["name"] = new_name
+                expense_to_edit["name"] = new_name
             if selected_option == 2:
                 new_amount = input("Enter the amount\n")
-            expense_to_edit["amount"] = new_amount
+                expense_to_edit["amount"] = new_amount
             break
     if not found:
         print("Expense not found.")
