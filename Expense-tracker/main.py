@@ -34,11 +34,13 @@ def show_expense():
     number = 1
     longest_name = 0
     print("expenses".upper().center(50, "="))
+    print()
     for expense in expenses:
         if len(expense["name"]) > longest_name:
             longest_name = len(expense["name"])
+    print(f"{"N0":<{longest_name}} {"Name":<{longest_name}} {"AMount":<{longest_name}} {"Date":<{longest_name}}")
     for expense in expenses:
-        print(f"{"\033[34mS/n\033[0m"} {number}. {expense["name"]:<{longest_name}}| ₦{expense["amount"]:<{longest_name}}| {expense["date"]:<{longest_name}}|")
+        print(f"{number}. {expense["name"]:<{longest_name}}| ₦{expense["amount"]:<{longest_name}}| {expense["date"]:<{longest_name}}|")
         number += 1
         total += expense["amount"]
     print()
