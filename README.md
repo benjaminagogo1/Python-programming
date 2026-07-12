@@ -643,3 +643,163 @@ Reading	Writing
 open(..., "r")	open(..., "w")
 file.read()	file.write(text)
 json.loads()	json.dumps()
+
+
+
+There are several approaches. For your current level, some are much better than others.
+
+Approach 1: Move the function definition above the call ⭐ (Recommended)
+
+Define load_expense() before you call it.
+
+expenses = load_expense()
+
+This is simple, readable, and common.
+
+Approach 2: Call it after all your function definitions ⭐ (Also recommended)
+
+Keep all your function definitions together.
+
+Then, just before your while loop starts, do:
+
+expenses = load_expense()
+
+running = True
+while running:
+    ...
+
+This is probably the approach I would choose for your project because it groups all the function definitions together and then starts the program.
+
+Approach 3: Create a main() function ⭐⭐ (Best as your programs grow)
+
+Instead of starting the program immediately, put the startup code inside a function:
+
+def main():
+    expenses = load_expense()
+    ...
+
+Then at the bottom:
+
+main()
+
+This becomes very useful as your projects become larger.
+
+Approach 4: Use the if __name__ == "__main__": pattern ⭐⭐⭐ (Professional Python)
+if __name__ == "__main__":
+    expenses = load_expense()
+    ...
+
+This is the standard Python pattern for programs that can also be imported by other Python files.
+
+We'll learn this later. There's no need to introduce it into this project yet.
+
+Which one should you use?
+
+For your Expense Tracker, I'd rank them like this:
+
+Approach 2 — Best fit.
+Approach 1 — Also perfectly fine.
+Approach 3 — Learn after you've finished this project.
+Approach 4 — Learn after you're comfortable with modules and importing.
+
+I recommend Approach 2 because it keeps your code organized:
+
+Imports
+Global variables
+Function definitions
+Load the saved data
+Start the menu (while loop)
+
+It's clean, easy to read, and scales well as your project grows.
+
+I do not understand this problem very well or the problem the solution below seems to solve.
+
+Good. Let's focus on only the problem. Forget the solutions for now.
+
+Step 1
+
+You have this at the top of your file:
+
+expenses = []
+
+Later, much further down, you define:
+
+def load_expense():
+    ...
+
+Still later, you have:
+
+running = True
+while running:
+    ...
+
+No problem so far.
+
+Step 2
+
+You want the program to load the saved expenses when it starts.
+
+So naturally, you think:
+
+expenses = load_expense()
+
+Correct?
+
+Step 3
+
+Where do you want to put that line?
+
+Do you want to put it:
+
+A. Right after:
+
+expenses = []
+B. Somewhere else.
+
+Tell me A or B. We won't discuss any solution until we've identified exactly where you intended to place it.
+
+
+
+Here's the closest mapping:
+
+Go	Python Equivalent
+os.ReadFile(path)	with open(path, "r") as f: content = f.read()
+os.Open(path)	open(path, "r") or with open(path, "r") as f:
+os.WriteFile(path, data, perm)	with open(path, "w") as f: f.write(data)
+Comparison
+
+Go
+
+data, err := os.ReadFile("expense.json")
+
+Python
+
+with open("expense.json", "r") as file:
+    data = file.read()
+
+Go
+
+file, err := os.Open("expense.json")
+
+Python
+
+file = open("expense.json", "r")
+
+or preferably:
+
+with open("expense.json", "r") as file:
+    ...
+
+Go
+
+err = os.WriteFile("expense.json", data, 0644)
+
+Python
+
+with open("expense.json", "w") as file:
+    file.write(data)
+
+One important difference you've probably noticed:
+
+Go has convenience functions like os.ReadFile() and os.WriteFile().
+Python usually uses open() together with .read() or .write() instead of separate ReadFile and WriteFile functions.

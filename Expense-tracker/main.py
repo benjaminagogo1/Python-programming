@@ -1,6 +1,7 @@
 import json
 
 expenses = []
+
 print("welcome!".upper().center(30, "="))
 print("Welcome to My Expense Tracker.\nA companion that never forgets where your money goes!")
 print()
@@ -24,7 +25,9 @@ def add_expense():
         "date": expenseDate
      }
     expenses.append(expense)
+    save_expense()
     print(f"\033[32m{expense["name"]} added successfully!\033[0m")
+    
 
 
 
@@ -79,7 +82,7 @@ def load_expense():
 
 
 def save_expense():
-    text = json.dumps(expenses)
+    text = json.dumps(expenses, indent=4)
     try:
         with open("expense.json", "w") as save_file:
             save_file.write(text)
@@ -125,6 +128,7 @@ def edit_displayed_expenses():
                 #     print("Error: enter the correct date format")
                 expense_to_edit["date"] = new_date
                 print(f"\033[32m{expense_to_edit["date"]} updated successfully!\033[0m")
+                save_expense()
             break
     if not found:
         print("Expense not found.")
@@ -150,8 +154,14 @@ def delete_expense():
         print("Choose from the the list of expenses")
         return
     deleted = expenses.pop(index)
+    save_expense()
     print(f"\033[31m{deleted["name"]} deleted successfully!\033[0m")
+
  
+
+
+expenses = load_expense()
+
 
 
 running = True
