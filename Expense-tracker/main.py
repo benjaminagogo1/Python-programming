@@ -45,7 +45,7 @@ def show_expense():
         number += 1
         total += expense["amount"]
     print("---------------------------------------------------")
-    print(f"Total expenses: = ₦{total}")
+    print(f"Total expenses: = ₦{total:,}")
     print()
     want_to_edit = input("Do you want edit?\n1. Yes\n2. No\n")
     try:
@@ -89,11 +89,11 @@ def edit_displayed_expenses():
 
             if selected_option == 3:
                 new_date = input("Enter the new date\n")
-                try:
-                    new_date = int(new_date)
-                except ValueError:
-                    return
-                    print("Error: enter the correct date format")
+                # try:
+                #     new_date = int(new_date)
+                # except ValueError:
+                #     return
+                #     print("Error: enter the correct date format")
                 expense_to_edit["date"] = new_date
                 print(f"\033[32m{expense_to_edit["date"]} updated successfully!\033[0m")
             break
