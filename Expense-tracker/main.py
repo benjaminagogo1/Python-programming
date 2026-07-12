@@ -1,3 +1,5 @@
+import json
+
 expenses = []
 print("welcome!".upper().center(30, "="))
 print("Welcome to My Expense Tracker.\nA companion that never forgets where your money goes!")
@@ -65,18 +67,25 @@ def load_expense():
             content = file.read()
             if content.strip() == "":
                 print("Error: empty content; nothing is saved in memory.")
-                return
+                return []
             data = json.loads(content)
             return data
     except FileNotFoundError:
-        expenses = []
+        return []
+    except json.JSONDecodeError:
+        print("Error: expense.json contains invalid JSON.")
+        return []
 
 
 
 def save_expense():
     text = json.dumps(expenses)
-    with open("expense.json", "w") as save_file:
-        save_file.write(text)
+    try:
+        with open("expense.json", "w") as save_file:
+            save_file.write(text)
+    except OSError:
+        print("Error: unable to save expense to file")
+        return
 
 
 def edit_displayed_expenses():
