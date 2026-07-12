@@ -56,7 +56,7 @@ def show_expense():
     try:
         want_to_edit = int(want_to_edit)
     except ValueError:
-        print("Error: Please, only enter only digit")
+        print("Error: Please, enter only digit")
         return
     if want_to_edit == 1:
         edit_displayed_expenses()
@@ -131,7 +131,7 @@ def edit_displayed_expenses():
                 save_expense()
             break
     if not found:
-        print("\033[31mExpense not found. Double check to ensure that both the spelling and casing exactly matched the expense to be edited.\033[0m")
+        print("\033[31mExpense not found. Please check that the spelling and capitalization exactly matched the expense you want to edit.\033[0m")
 
 
 
