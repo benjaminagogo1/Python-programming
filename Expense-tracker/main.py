@@ -131,7 +131,7 @@ def edit_displayed_expenses():
                 save_expense()
             break
     if not found:
-        print("Expense not found.")
+        print("\033[31mExpense not found. Double check to ensure that both the spelling and casing exactly matched the expense to be edited.\033[0m")
 
 
 
@@ -142,11 +142,13 @@ def delete_expense():
     number = 1
     longest_name = 0
     print("Choose the expense to delete".upper().center(40, "="))
+    print()
     for expense in expenses:
         if len(expense["name"]) > longest_name:
             longest_name = len(expense["name"])
         print(f"{number}. {expense["name"]:<{longest_name}} ₦{expense["amount"]:<{longest_name}} |{expense["date"]:<{longest_name}}")
         number += 1
+        print()
     choice = input("which expense do you want to delete?\n")
     try:
         choice = int(choice)
