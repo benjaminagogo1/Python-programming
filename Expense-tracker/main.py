@@ -59,6 +59,26 @@ def show_expense():
         return
 
 
+def load_expense():
+    try:
+        with open("expense.json", "r") as file:
+            content = file.read()
+            if content.strip() == "":
+                print("Error: empty content; nothing is saved in memory.")
+                return
+            data = json.loads(content)
+            return data
+    except FileNotFoundError:
+        expenses = []
+
+
+
+def save_expense():
+    text = json.dumps(expenses)
+    with open("expense.json", "w") as save_file:
+        save_file.write(text)
+
+
 def edit_displayed_expenses():
     found = False
     item_selected = input("which expense do you want to edit?\n")

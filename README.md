@@ -586,3 +586,60 @@ After the loop, ask:
 
 if not found:
     print("Expense not found.")
+
+
+
+From a programmer's perspective, a file is simply a sequence of bytes stored permanently on a storage device (SSD, HDD, USB, etc.).
+
+A try block tells Python:
+
+"I'm about to do something that might fail."
+
+An except block tells Python:
+
+"If it does fail, don't crash the program. Instead, run this code to handle the problem."
+
+
+
+with open(...) as file:
+    ...
+
+The with statement makes a promise:
+
+"No matter how this block of code ends—normally or because of an exception—I will close the file."
+
+
+
+
+Reading
+File
+   ↓
+open(..., "r")
+   ↓
+file.read()
+   ↓
+JSON string
+   ↓
+json.loads()
+   ↓
+Python list (expenses)
+Writing
+
+Now we go in the opposite direction.
+
+Python list (expenses)
+   ↓
+json.dumps()
+   ↓
+JSON string
+   ↓
+file.write()
+   ↓
+File
+
+Notice how beautiful the symmetry is.
+
+Reading	Writing
+open(..., "r")	open(..., "w")
+file.read()	file.write(text)
+json.loads()	json.dumps()
