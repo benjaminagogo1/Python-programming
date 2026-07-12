@@ -134,14 +134,18 @@ def edit_displayed_expenses():
         print("Expense not found.")
 
 
+
 def delete_expense():
     if not expenses:
         print("No expense to delete.")
         return
     number = 1
+    longest_name = 0
     print("Choose the expense to delete".upper().center(40, "="))
     for expense in expenses:
-        print(f"{number}. {expense["name"]}: ₦{expense["amount"]} |{expense["date"]}")
+        if len(expense["name"]) > longest_name:
+            longest_name = len(expense["name"])
+        print(f"{number}. {expense["name"]:<{longest_name}} ₦{expense["amount"]:<{longest_name}} |{expense["date"]:<{longest_name}}")
         number += 1
     choice = input("which expense do you want to delete?\n")
     try:

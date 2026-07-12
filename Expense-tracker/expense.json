@@ -1,1 +1,47 @@
-[{"name": "Transportation", "amount": 4000, "date": "1/7/26"}, {"name": "Food", "amount": 6000, "date": "3/7/26"}, {"name": "Laptop", "amount": 1500000, "date": "3/7/26"}, {"name": "Internet", "amount": 800, "date": "7/7/26"}, {"name": "Airtime", "amount": 2000, "date": "9/7/26"}, {"name": "Book", "amount": 6000, "date": "5/7/26"}, {"name": "Others", "amount": 10000, "date": "4/7/26"}]
+[
+    {
+        "name": "Transportation",
+        "amount": 4000,
+        "date": "1/7/26"
+    },
+    {
+        "name": "Food",
+        "amount": 6000,
+        "date": "3/7/26"
+    },
+    {
+        "name": "Laptop",
+        "amount": 1500000,
+        "date": "3/7/26"
+    },
+    {
+        "name": "Others",
+        "amount": 10000,
+        "date": "4/7/26"
+    },
+    {
+        "name": "Food",
+        "amount": 4000,
+        "date": "1/7/26"
+    },
+    {
+        "name": "Barbing",
+        "amount": 1000,
+        "date": "2/7/26"
+    },
+    {
+        "name": "Airtime",
+        "amount": 4000,
+        "date": "4/7/26"
+    },
+    {
+        "name": "Internet",
+        "amount": 6000,
+        "date": "5/7/26"
+    },
+    {
+        "name": "Book",
+        "amount": 8000,
+        "date": "6/7/26"
+    }
+]
