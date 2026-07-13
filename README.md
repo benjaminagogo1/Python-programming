@@ -803,3 +803,314 @@ One important difference you've probably noticed:
 
 Go has convenience functions like os.ReadFile() and os.WriteFile().
 Python usually uses open() together with .read() or .write() instead of separate ReadFile and WriteFile functions.
+
+
+
+
+
+
+This is actually an excellent question, especially because I know where you left off in Go.
+
+You weren't a complete beginner anymore. You had learned things like:
+
+Functions
+Structs (basic use)
+Slices
+Maps
+Packages
+Reading/writing files
+JSON (Marshal/Unmarshal)
+Error handling
+HTTP servers (ascii-art-web)
+Dockerizing an application
+
+So rather than relearning programming, you're translating concepts from Go into Python.
+
+If I were mentoring you, these are the differences I'd keep reminding you about.
+
+1. Variables
+Go
+age := 20
+Python
+age = 20
+
+Python has no := for normal variable declaration and no explicit types.
+
+Remember: Python variables are names pointing to objects.
+
+2. Types
+
+Go
+
+var age int
+
+Python
+
+age = 20
+
+No type declaration.
+
+Python figures it out.
+
+3. Braces vs Indentation
+
+Go
+
+if age > 18 {
+    fmt.Println("Adult")
+}
+
+Python
+
+if age > 18:
+    print("Adult")
+
+This is the biggest visual change.
+
+Indentation replaces braces.
+
+4. Semicolons
+
+Go
+
+fmt.Println("Hello")
+
+Python
+
+print("Hello")
+
+No semicolons.
+
+5. Error Handling
+
+Go
+
+file, err := os.Open(...)
+if err != nil {
+    return err
+}
+
+Python
+
+try:
+    ...
+except FileNotFoundError:
+    ...
+
+This is probably the biggest conceptual difference.
+
+6. Functions Returning Values
+
+Go
+
+return value
+
+Python
+
+return value
+
+Exactly the same.
+
+7. Lists vs Slices
+
+Go
+
+[]string
+
+Python
+
+[]
+
+Python lists are much more powerful.
+
+Think of them as slices that already have many built-in methods.
+
+8. Maps vs Dictionaries
+
+Go
+
+map[string]int
+
+Python
+
+{}
+
+These are almost the same idea.
+
+9. Structs vs Dictionaries
+
+Go
+
+type Expense struct {
+    Name string
+}
+
+Python beginner code
+
+{
+    "name": "Food"
+}
+
+Later you'll learn Python classes, which are closer to Go structs.
+
+10. Methods
+
+Go
+
+expense.Print()
+
+Python
+
+Exactly the same idea with classes.
+
+You'll learn this later.
+
+11. Loops
+
+Go
+
+One keyword:
+
+for
+
+Python
+
+Mostly:
+
+for
+
+and
+
+while
+
+Python's for loop feels much more natural.
+
+12. File Handling
+
+Go
+
+os.ReadFile()
+os.WriteFile()
+
+Python
+
+open()
+read()
+write()
+
+You've already learned this.
+
+13. JSON
+
+Go
+
+json.Marshal()
+json.Unmarshal()
+
+Python
+
+json.dumps()
+json.loads()
+
+You already understand this mapping.
+
+14. Pointers
+
+Go
+
+Pointers are everywhere.
+
+Python
+
+Almost never.
+
+This surprises many Go programmers.
+
+15. Interfaces
+
+Go
+
+Huge topic.
+
+Python
+
+Duck typing.
+
+If something behaves correctly, Python usually doesn't care about its type.
+
+16. Packages
+
+Go
+
+import "fmt"
+
+Python
+
+import json
+
+Almost identical.
+
+17. Visibility
+
+Go
+
+Print()
+
+Exported.
+
+print()
+
+Private.
+
+Python
+
+Uses convention:
+
+_print()
+
+means "internal".
+
+No compiler enforcement.
+
+18. Classes
+
+Go
+
+Struct + methods.
+
+Python
+
+Class.
+
+Very similar once you learn them.
+
+19. Concurrency
+
+Go
+
+go function()
+
+Python
+
+Different tools (threading, asyncio, multiprocessing).
+
+This comes much later.
+
+20. Philosophy
+
+This is the biggest difference.
+
+Go says:
+
+Be explicit.
+
+Python says:
+
+Be readable.
+
+The three mindset changes I'd keep reminding you of
+Don't look for Go syntax in Python. Learn the Python way instead of translating line by line.
+Python has many built-in conveniences. Before writing code yourself, ask, "Does Python already provide this?"
+Write for readability first. In Python, code is expected to be easy to read by another programmer.
+
+These are the differences I'd keep at your fingertips as you continue your Python journey. Many of the remaining concepts—classes, modules, testing, decorators, generators, asynchronous programming—will build on the programming foundation you already developed in Go, but they'll often be expressed in a more concise, Pythonic way.
