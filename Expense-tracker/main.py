@@ -146,7 +146,7 @@ def delete_expense():
     for expense in expenses:
         if len(expense["name"]) > longest_name:
             longest_name = len(expense["name"])
-        print(f"{number}. {expense["name"]:<{longest_name}} ₦{expense["amount"]:<{longest_name}} |{expense["date"]:<{longest_name}}")
+        print(f"{number}. {expense["name"]:<{longest_name}}  ₦{expense["amount"]:<{longest_name}} |{expense["date"]:<{longest_name}}")
         number += 1
         print()
     choice = input("which expense do you want to delete?\n")
