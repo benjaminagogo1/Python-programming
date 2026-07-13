@@ -1226,3 +1226,35 @@ except Exception:
 Exception catches most runtime errors. It's useful as a last resort, but when you know the specific error (like FileNotFoundError or JSONDecodeError), it's better to catch that specific exception
 
 "Pass data in instead of reaching out for global data."
+
+
+
+
+
+1. Workflow
+
+A workflow is a sequence of steps performed to complete a task from start to finish.
+
+Example:
+Receive an order → Process payment → Prepare the item → Deliver it.
+
+2. Prototyping
+
+Prototyping is the process of building a simple working version of an idea to test whether it works before creating the final product.
+
+Example:
+Building a basic expense tracker with only "Add" and "Show" features before adding editing, deleting, and reports.
+
+3. Server
+
+A server is a computer or program whose job is to receive requests from other computers and provide the requested information or service.
+
+Example:
+When you open YouTube, your phone asks YouTube's server for a video. The server sends the video back.
+
+4. Scripting
+
+Scripting is writing small programs that automate tasks which you would otherwise do manually.
+
+Example:
+Instead of renaming 500 files one by one, you write a Python script to rename all 500 automatically.
