@@ -1114,3 +1114,113 @@ Python has many built-in conveniences. Before writing code yourself, ask, "Does 
 Write for readability first. In Python, code is expected to be easy to read by another programmer.
 
 These are the differences I'd keep at your fingertips as you continue your Python journey. Many of the remaining concepts—classes, modules, testing, decorators, generators, asynchronous programming—will build on the programming foundation you already developed in Go, but they'll often be expressed in a more concise, Pythonic way.
+
+
+
+
+
+
+Yes. There are many exception types in Python. Here are some of the most common ones you'll encounter.
+
+try:
+    ...
+except FileNotFoundError:
+    ...
+File-related
+except FileNotFoundError:
+
+File does not exist.
+
+except PermissionError:
+
+No permission to access the file.
+
+except OSError:
+
+General operating system/file error.
+
+except IsADirectoryError:
+
+Expected a file but got a directory.
+
+except NotADirectoryError:
+
+Expected a directory but got a file.
+
+JSON
+except json.JSONDecodeError:
+
+Invalid JSON.
+
+Numbers
+except ValueError:
+
+Correct type, invalid value.
+
+Example:
+
+int("abc")
+except TypeError:
+
+Wrong data type.
+
+Example:
+
+5 + "hello"
+except ZeroDivisionError:
+
+Division by zero.
+
+Collections
+except IndexError:
+
+List index out of range.
+
+Example:
+
+expenses[10]
+except KeyError:
+
+Dictionary key does not exist.
+
+Example:
+
+expense["price"]
+
+when only "amount" exists.
+
+Variables
+except NameError:
+
+Using a variable that doesn't exist.
+
+Example:
+
+print(totalExpense)
+
+before defining it.
+
+Importing
+except ImportError:
+
+Module cannot be imported.
+
+Catching multiple exceptions
+try:
+    ...
+except (FileNotFoundError, PermissionError):
+    print("Unable to open file.")
+Catching any exception
+try:
+    ...
+except Exception as err:
+    print(err)
+
+or
+
+try:
+    ...
+except Exception:
+    print("Something went wrong.")
+
+Exception catches most runtime errors. It's useful as a last resort, but when you know the specific error (like FileNotFoundError or JSONDecodeError), it's better to catch that specific exception
