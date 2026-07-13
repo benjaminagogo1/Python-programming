@@ -1,3 +1,4 @@
+import sys
 #!/usr/bin/env python3
 
 greeting="Hello, world!"
@@ -15,3 +16,9 @@ print("2")
 
 print(f"|{'Food':<15}|")
 print(f"|{'Transportation':>15}|")
+
+print(sys.version)
+
+print()
+
+print("I am", 24, "years old.")
