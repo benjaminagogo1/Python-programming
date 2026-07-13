@@ -1224,3 +1224,5 @@ except Exception:
     print("Something went wrong.")
 
 Exception catches most runtime errors. It's useful as a last resort, but when you know the specific error (like FileNotFoundError or JSONDecodeError), it's better to catch that specific exception
+
+"Pass data in instead of reaching out for global data."

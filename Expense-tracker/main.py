@@ -1,13 +1,11 @@
 import json
 
-expenses = []
-
 print("welcome!".upper().center(30, "="))
 print("Welcome to My Expense Tracker.\nA companion that never forgets where your money goes!")
 print()
 
 
-def add_expense():
+def add_expense(expenses):
     expenseName = input("Enter expense name..\n")
     if expenseName.strip() == "":
         print("Expense name cannot be empty.")
@@ -25,13 +23,13 @@ def add_expense():
         "date": expenseDate
      }
     expenses.append(expense)
-    save_expense()
+    save_expense(expenses)
     print(f"\033[32m{expense["name"]} added successfully!\033[0m")
     
 
 
 
-def show_expense():
+def show_expense(expenses):
     if not expenses:
         print("No expense found. Add some expenses to be displayed.")
         return
@@ -59,7 +57,7 @@ def show_expense():
         print("Error: Please, enter only digit")
         return
     if want_to_edit == 1:
-        edit_displayed_expenses()
+        edit_displayed_expenses(expenses)
     elif want_to_edit == 2:
         return
 
@@ -69,7 +67,7 @@ def load_expense():
         with open("expense.json", "r") as file:
             content = file.read()
             if content.strip() == "":
-                print("Error: empty content; nothing is saved in memory.")
+                print("No saved expenses found.")
                 return []
             data = json.loads(content)
             return data
@@ -81,7 +79,7 @@ def load_expense():
 
 
 
-def save_expense():
+def save_expense(expenses):
     text = json.dumps(expenses, indent=4)
     try:
         with open("expense.json", "w") as save_file:
@@ -91,7 +89,7 @@ def save_expense():
         return
 
 
-def edit_displayed_expenses():
+def edit_displayed_expenses(expenses):
     found = False
     item_selected = input("which expense do you want to edit?\n")
     for expense_to_edit in expenses:
@@ -128,14 +126,14 @@ def edit_displayed_expenses():
                 #     print("Error: enter the correct date format")
                 expense_to_edit["date"] = new_date
                 print(f"\033[32m{expense_to_edit["date"]} updated successfully!\033[0m")
-                save_expense()
+                save_expense(expenses)
             break
     if not found:
         print("\033[31mExpense not found. Please check that the spelling and capitalization exactly matched the expense you want to edit.\033[0m")
 
 
 
-def delete_expense():
+def delete_expense(expenses):
     if not expenses:
         print("No expense to delete.")
         return
@@ -160,36 +158,39 @@ def delete_expense():
         print("Choose from the the list of expenses")
         return
     deleted = expenses.pop(index)
-    save_expense()
+    save_expense(expenses)
     print(f"\033[31m{deleted["name"]} deleted successfully!\033[0m")
 
  
 
 
-expenses = load_expense()
 
 
+def main():
+    expenses = load_expense()
 
-running = True
-while running:
+    running = True
+    while running:
 
-    print()
-    print("menu".upper().center(24, "="))
-    userOption = input("Choose....\n1. Add Expense\n2. Show Expense\n3. Delete Expense\n4. Exit\n")
-
-    print()
-    if userOption != "1" and userOption != "2" and userOption != "3" and userOption != "4":
-        print("You must choose between 1, 2, 3 or 4")
-        continue
-    option = int(userOption)
-    if option == 1:
-        add_expense()
-    elif option == 2:
-        show_expense()
-    elif option == 3:
-        delete_expense()
-    elif option == 4:
-        running = False
-        print("Thank you for for using my expense tracker".upper().center(60, "="))
-        print("\033[34mgoodbye! ".upper().center(60, "="))
         print()
+        print("menu".upper().center(24, "="))
+        userOption = input("Choose....\n1. Add Expense\n2. Show Expense\n3. Delete Expense\n4. Exit\n")
+
+        print()
+        if userOption != "1" and userOption != "2" and userOption != "3" and userOption != "4":
+            print("You must choose between 1, 2, 3 or 4")
+            continue
+        option = int(userOption)
+        if option == 1:
+            add_expense(expenses)
+        elif option == 2:
+            show_expense(expenses)
+        elif option == 3:
+            delete_expense(expenses)
+        elif option == 4:
+            running = False
+            print("Thank you for for using my expense tracker".upper().center(60, "="))
+            print("\033[34mgoodbye! ".upper().center(60, "="))
+            print()
+
+main()
