@@ -52,6 +52,57 @@ txt = "Hello\rWorld!"
 print(txt) 
 
 
-#A backslash followed by an 'x' and a hex number represents a hex value:
-txt = "\x48\x65\x6c\x6c\x6f"
-print(txt) 
+# #A backslash followed by an 'x' and a hex number represents a hex value:
+# txt = "\x48\x65\x6c\x6c\x6f"
+# print(txt) 
+
+
+# x = ["apple", "banana"]
+# y = ["apple", "banana"]
+# z = ["apple", "banana"]
+
+# print(x is z)
+# print(x is y)
+# print(x == y)
+
+
+x = ["apple", "banana"]
+y = ["apple", "banana"]
+
+print(x is not y)
+
+
+x = [1, 2, 3]
+y = [1, 2, 3]
+
+print(x == y)
+print(x is y)
+print(x is not y)
+
+container = ["me", "mother"]
+fruits = ["apple", "banana", "cherry"]
+for one in fruits:
+    container.append(one)
+print(f"Total content: {container}")
+print("banan" in fruits)
+
+
+
+# Inside the editor, complete the following steps:
+
+#     Create two variables a = 15 and b = 4
+#     Print the result of a modulus b (the % operator)
+#     Print the result of a floor division b (the // operator)
+#     Print the result of a to the power of b (the ** operator)
+#     Use an assignment operator to add 10 to a (use +=)
+
+
+
+
+a = 15
+b = 4
+print(a%b)
+print(a//b)
+print(a**b)
+a = a + 10
+print(a)

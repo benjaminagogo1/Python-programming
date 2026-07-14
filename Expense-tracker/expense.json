@@ -18,5 +18,15 @@
         "name": "Airtime",
         "amount": 500,
         "date": "12/7/26"
+    },
+    {
+        "name": "Food",
+        "amount": 1100,
+        "date": "14/7/26"
+    },
+    {
+        "name": "Toothpaste",
+        "amount": 500,
+        "date": "14/7/26"
     }
 ]
