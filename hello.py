@@ -30,3 +30,15 @@ x = y = z = "Orange"
 print(x)
 print(y)
 print(z)
+
+
+
+age = 36
+txt = f"My name is John, I am {age}"
+print(txt)
+
+price = 60
+
+text = f"The total is {price:.2f} dollars"
+
+print(text)
