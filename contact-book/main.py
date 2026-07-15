@@ -1,5 +1,6 @@
 contacts = []
 
+exit_program = False
 y = True
 while y:
 
@@ -30,3 +31,9 @@ while y:
             continue
         if add_choice == 1:
             break
+        elif add_choice == 2:
+            exit_program = True
+            break
+
+    if exit_program:
+        break
