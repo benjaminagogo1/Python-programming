@@ -28,5 +28,35 @@
         "name": "Toothpaste",
         "amount": 500,
         "date": "14/7/26"
+    },
+    {
+        "name": "Food",
+        "amount": 1000,
+        "date": "15/7/26"
+    },
+    {
+        "name": "Cake",
+        "amount": 1000,
+        "date": "15/7/26"
+    },
+    {
+        "name": "Toothpaste",
+        "amount": 1000,
+        "date": "15/7/26"
+    },
+    {
+        "name": "Maggi",
+        "amount": 500,
+        "date": "15/7/16"
+    },
+    {
+        "name": "Ugwu",
+        "amount": 400,
+        "date": "15/7/26"
+    },
+    {
+        "name": "Sugar",
+        "amount": 1200,
+        "date": "15/7/26"
     }
 ]
