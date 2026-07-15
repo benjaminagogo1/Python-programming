@@ -30,5 +30,3 @@ while y:
             continue
         if add_choice == 1:
             break
-        # if add_choice == 2:
-        #     return
