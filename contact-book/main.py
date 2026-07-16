@@ -9,7 +9,7 @@ while running:
 
     print("Contact-Book".upper().center(24, "="))
     try:
-        chosen_option = int(input("Choose an option.\n\n1. Add contact\n2. View contact\n3. Delete contact\n4. Exit\n"))
+        chosen_option = int(input("Choose an option.\n\n1. Add contact\n2. View contacts\n3. Edit contacts\n4. Delete contact\n5. Exit\n"))
         
     except ValueError:
         print("Please, enter only 1, 2, or 3.\n")
@@ -58,10 +58,21 @@ while running:
         text = json.dumps(contacts, indent=2)
         print(text)
     elif chosen_option == 3:
+        serial = 1
+        if not contacts:
+            print("No contact found")
+            print()
+            continue
+        print("all contacts".upper().center(31, "="))
+        for edit_contact in contacts:
+            print(f"{serial}. {edit_contact['Contact-Name']} - {edit_contact['Contact-Phone']}")
+            serial += 1
+            print()
+    elif chosen_option == 5:
         running = False
         break
     else:
-        print("Please enter only the digit: 1, 2, or 3\n")
+        print("Please enter only the digit: 1, 2, 3, 4 or 5.\n")
         continue
     
    
