@@ -58,6 +58,7 @@ while running:
         text = json.dumps(contacts, indent=2)
         print(text)
     elif chosen_option == 3:
+        found = False
         serial = 1
         if not contacts:
             print("No contact found")
@@ -68,11 +69,27 @@ while running:
             print(f"{serial}. {edit_contact['Contact-Name']} - {edit_contact['Contact-Phone']}")
             serial += 1
             print()
+
+        contact_number_selected = input("Choose the contact number to edit.\n")
+
+        contact_number_selected = int(contact_number_selected)
+
+        user_index = contact_number_selected - 1
+
+        selected_contact = contacts[user_index]
+        print(selected_contact)
+
+        item = int(input("what do you want to edit?\n1. Contact Name\n2. Phone Number\n"))
+        
+        if item == 1:
+            new_contact_name = input("Enter the new contact name\n")
+            selected_contact["Contact-Name"] = new_contact_name
+            print(item_index)
+
+
     elif chosen_option == 5:
         running = False
         break
     else:
         print("Please enter only the digit: 1, 2, 3, 4 or 5.\n")
         continue
-    
-   
