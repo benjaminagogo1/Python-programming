@@ -1390,4 +1390,9 @@ insert()	Adds an element at the specified position
 pop()	Removes the element at the specified position
 remove()	Removes the item with the specified value
 reverse()	Reverses the order of the list
-sort()	Sorts the list
+sort()	Sorts the 
+
+
+
+
+isnumeric is not a value. It's a method (a function that belongs to a string).

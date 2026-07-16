@@ -106,3 +106,6 @@ print(a//b)
 print(a**b)
 a = a + 10
 print(a)
+
+
+print("09-090".isnumeric())
