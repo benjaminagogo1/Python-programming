@@ -109,3 +109,21 @@ print(a)
 
 
 print("09-090".isnumeric())
+
+
+
+contact_phone = input("Enter phone number: ")
+
+if not contact_phone.isdigit():
+    print("Phone number must contain only digits.")
+
+
+
+
+if not contact_phone.isnumeric():
+    print("Only digits are allowed.")
+
+
+
+if contact_phone.isnumeric() == False:
+    print("Only digits are allowed.")

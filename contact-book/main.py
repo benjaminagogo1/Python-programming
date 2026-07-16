@@ -1,3 +1,5 @@
+import json
+
 contacts = []
 
 exit_program = False
@@ -7,7 +9,8 @@ while running:
 
     print("Contact-Book".upper().center(24, "="))
     try:
-        chosen_option = int(input("Choose an option.\n\n1. Add contact\n2. View contact\n3. Exit\n"))
+        chosen_option = int(input("Choose an option.\n\n1. Add contact\n2. View contact\n3. Delete contact\n4. Exit\n"))
+        
     except ValueError:
         print("Please, enter only 1, 2, or 3.\n")
         continue
@@ -17,14 +20,16 @@ while running:
             print("Invalid input: Contact name cannot be empty.\n")
             continue
         contact_phone = input("Enter the contact phone\n")
-        if contact_phone != isnumeric
+        if contact_phone.isdigit() == False:
+            print("Phone number must contain only digit.")
+            print()
+            continue
         contact = {
             "Contact-Name": contact_name,
             "Contact-Phone": contact_phone,
         }
         contacts.append(contact)
         print()
-
 
         while True:
             add_choice = input("Add another contact?\n1. Yes\n2. No\n")
@@ -50,7 +55,8 @@ while running:
             continue
         for contact in contacts:
             print(contact)
-            print()
+        text = json.dumps(contacts, indent=2)
+        print(text)
     elif chosen_option == 3:
         running = False
         break

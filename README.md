@@ -1396,3 +1396,5 @@ sort()	Sorts the
 
 
 isnumeric is not a value. It's a method (a function that belongs to a string).
+
+That's called persistence—making data survive after the program closes.
