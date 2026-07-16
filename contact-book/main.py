@@ -90,6 +90,12 @@ while running:
                 print("Invalid input: Only digits are allowed.")
                 continue
             selected_contact["Contact-Phone"] = new_contact_phone
+    elif chosen_option == 4:
+        if not contacts:
+            print("Not contact found.")
+            continue
+        for delete_contact in contacts:
+            print(delete_contact)
     elif chosen_option == 5:
         running = False
         break
