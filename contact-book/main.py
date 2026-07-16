@@ -75,16 +75,15 @@ while running:
         contact_number_selected = int(contact_number_selected)
 
         user_index = contact_number_selected - 1
-
+        if user_index < 1 or user_index > len(contacts):
+            print("Invalid input: Choose the correct number of the contact you want to edit.")
+            continue
         selected_contact = contacts[user_index]
-        print(selected_contact)
-
         item = int(input("what do you want to edit?\n1. Contact Name\n2. Phone Number\n"))
-        
+
         if item == 1:
             new_contact_name = input("Enter the new contact name\n")
             selected_contact["Contact-Name"] = new_contact_name
-            print(item_index)
 
 
     elif chosen_option == 5:
