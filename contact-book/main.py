@@ -75,7 +75,7 @@ while running:
         contact_number_selected = int(contact_number_selected)
 
         user_index = contact_number_selected - 1
-        if user_index < 1 or user_index > len(contacts):
+        if user_index < 0 or user_index > len(contacts):
             print("Invalid input: Choose the correct number of the contact you want to edit.")
             continue
         selected_contact = contacts[user_index]
@@ -84,8 +84,12 @@ while running:
         if item == 1:
             new_contact_name = input("Enter the new contact name\n")
             selected_contact["Contact-Name"] = new_contact_name
-
-
+        if item == 2:
+            new_contact_phone = input("Enter the new phone number\n")
+            if not new_contact_phone.isdigit():
+                print("Invalid input: Only digits are allowed.")
+                continue
+            selected_contact["Contact-Phone"] = new_contact_phone
     elif chosen_option == 5:
         running = False
         break
