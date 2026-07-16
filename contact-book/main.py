@@ -1,18 +1,29 @@
 contacts = []
 
 exit_program = False
-y = True
-while y:
+running = True
+while running:
 
 
-
-    contact_name = input("Enter the contact name\n")
-
+    print("Contact-Book".upper().center(24, "="))
     try:
-        contact_phone = int(input("Enter the phone number\n"))
+        chosen_option = int(input("Choose an option.\n\n1. Add contact\n2. View contact\n3. Exit\n"))
     except ValueError:
-        print("Error: Please enter only digit.")
-        # continue
+        print("Please, enter only 1, 2, or 3.\n")
+        continue
+    if chosen_option == 1:
+        contact_name = input("Enter the contact name\n")
+        try:
+            contact_phone = int(input("Enter the contact phone\n"))
+        except ValueError:
+            print("Only digits")
+            continue
+    elif chosen_option == 3:
+        running = False
+        break
+    else:
+        print("Please enter only the digit: 1, 2, or 3\n")
+        continue
     contact = {
         "name": contact_name,
         "phone": contact_phone,
@@ -23,7 +34,7 @@ while y:
     print()
     
     while True:
-        add_choice = input("Do you want to another contact?\n1. Yes\n2. No\n")
+        add_choice = input("Do you want to add another contact?\n1. Yes\n2. No\n")
         try:
             add_choice = int(add_choice)
         except ValueError:
@@ -34,6 +45,8 @@ while y:
         elif add_choice == 2:
             exit_program = True
             break
+        else:
+            print("Please enter 1 or 2.\n")
 
     if exit_program:
         break
