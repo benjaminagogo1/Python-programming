@@ -58,5 +58,25 @@
         "name": "Sugar",
         "amount": 1200,
         "date": "15/7/26"
+    },
+    {
+        "name": "Akpu",
+        "amount": 200,
+        "date": "16/7/26"
+    },
+    {
+        "name": "Fish",
+        "amount": 600,
+        "date": "16/7/26"
+    },
+    {
+        "name": "Food",
+        "amount": 1500,
+        "date": "16/7/26"
+    },
+    {
+        "name": "Bag-Of-Sachet-Water",
+        "amount": 450,
+        "date": "16/7/26"
     }
 ]
