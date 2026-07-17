@@ -77,7 +77,7 @@ while running:
         contact_number_selected = int(contact_number_selected)
 
         user_index = contact_number_selected - 1
-        if user_index < 0 or user_index > len(contacts):
+        if user_index < 0 or user_index >= len(contacts):
             print("Invalid input: Choose the correct number of the contact you want to edit.")
             continue
         selected_contact = contacts[user_index]
@@ -107,7 +107,7 @@ while running:
             continue
         item_selected = int(item_selected)
         item_selected_index = item_selected -1
-        if item_selected_index < 0 or item_selected_index > len(contacts):
+        if item_selected_index < 0 or item_selected_index >= len(contacts):
             print("Invalid input: Choose from the list of contacts.")
             continue
         item_deleted = contacts.pop(item_selected_index)
