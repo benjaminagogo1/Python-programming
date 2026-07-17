@@ -1,6 +1,6 @@
 import json
 
-def load_contact():
+def load_contacts():
     try:
         with open("contact.json", "r") as load_contacts:
             content = load_contacts.read()
