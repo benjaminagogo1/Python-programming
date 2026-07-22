@@ -78,5 +78,55 @@
         "name": "Bag-Of-Sachet-Water",
         "amount": 450,
         "date": "16/7/26"
+    },
+    {
+        "name": "Food-Frm-canteen",
+        "amount": 1100,
+        "date": "20/7/26"
+    },
+    {
+        "name": "Water",
+        "amount": 400,
+        "date": "20/7/26"
+    },
+    {
+        "name": "Spaghetti-Fm-CTN",
+        "amount": 1600,
+        "date": "20/7/26"
+    },
+    {
+        "name": "Airtime",
+        "amount": 2000,
+        "date": "20/7/26"
+    },
+    {
+        "name": "Hollandia-Yoghurt",
+        "amount": 2000,
+        "date": "21/7/26"
+    },
+    {
+        "name": "Meat",
+        "amount": 2500,
+        "date": "21/7/26"
+    },
+    {
+        "name": "Okro",
+        "amount": 200,
+        "date": "21/7/26"
+    },
+    {
+        "name": "Crayfish",
+        "amount": 500,
+        "date": "21/7/26"
+    },
+    {
+        "name": "Hair-cream",
+        "amount": 300,
+        "date": "21/7/26"
+    },
+    {
+        "name": "Akpu",
+        "amount": 200,
+        "date": "21/7/26"
     }
 ]
