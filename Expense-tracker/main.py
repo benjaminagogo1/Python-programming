@@ -42,12 +42,12 @@ def show_expense(expenses):
         if len(expense["name"]) > longest_name:
             longest_name = len(expense["name"])
     print(f"{"N0"}. {"Name":<{longest_name}}{"Amount":<{longest_name}}    {"Date":<{longest_name}}")
-    print("---------------------------------------------------")
+    print("-------------------------------------------------------------")
     for expense in expenses:
         print(f"{number}. {expense["name"]:<{longest_name}}| ₦{expense["amount"]:<{longest_name}} {expense["date"]:<{longest_name}}")
         number += 1
         total += expense["amount"]
-    print("---------------------------------------------------")
+    print("--------------------------------------------------------------")
     print(f"Total expenses: = ₦{total:,}")
     print()
     want_to_edit = input("Do you want edit?\n1. Yes\n2. No\n")

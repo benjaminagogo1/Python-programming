@@ -128,5 +128,20 @@
         "name": "Akpu",
         "amount": 200,
         "date": "21/7/26"
+    },
+    {
+        "name": "Egg",
+        "amount": 300,
+        "date": "22/7/26"
+    },
+    {
+        "name": "Akpu",
+        "amount": 200,
+        "date": "22/7/26"
+    },
+    {
+        "name": "Gas-lighter",
+        "amount": 300,
+        "date": "22/7/26"
     }
 ]
